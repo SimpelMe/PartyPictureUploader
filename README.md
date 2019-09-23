@@ -1,4 +1,4 @@
-# Simple File Uploader
+# PartyPictureUploader - forked from: Simple File Uploader
 
 [![Code Climate](https://codeclimate.com/github/merty/simple-file-uploader/badges/gpa.svg)](https://codeclimate.com/github/merty/simple-file-uploader)
 
