@@ -1,182 +1,47 @@
-html {
-  width: 100%;
-  height: 110%;
-  margin: 0px;
-}
-
 body {
-  //background-image: url("https://www.frag-den-neudeck.de/wp-content/uploads/2015/01/SMPTE-Farbbalken.jpg");
-  
   font-family: 'Montserrat', sans-serif;
   display:block;
   font-size: 5.5em;
   font-weight: 700;
-  //font-size: 0.9em;
-  //line-height: 1.8;
+  background-color: #555555;
 }
 
 input[type="file"] {
   display: none;
 }
 
-/*a,
-body {
-  //background: url("Plakat_Foto.jpg") no-repeat center center;
-  //background: url("https://www.frag-den-neudeck.de/wp-content/uploads/2015/01/SMPTE-Farbbalken.jpg") no-repeat center center;
-  //background: url("https://cdn.pbrd.co/images/Ho3ZdHv.jpg") no-repeat;
-  //background: url("https://singersongwriterslam.de/temp/hg1.png") no-repeat;
-  //background-size: cover;
-  //background-size: contain;
-  //color: #0000ff;
-  //background-image: url("file:///Users/SV/Desktop/PartyPictureUploader/design/Plakat_Foto.jpg");
-  //background-image: "Plakat_Foto.jpg";
-  //background-color: #00f;
-}
-
-a {
-  text-decoration: none;
-}
-
-.clear {
-  clear: both;
-}*/
-
 #dropzone {
 	background-color: #f7f7f7;
-	//color: rgba(0,0,0,255);
-	//-webkit-text-fill-color: transparent;
-	//opacity: 0;
-	//border: 2px dashed #c7c7c7;
-	//height: 33%;
-	/*margin: 12%;
-	margin-top: 40%;
-	margin-bottom: 38%;
-  padding-top: 14%;
-  padding-bottom: 14%;*/
   position: absolute;
   height: 30%; 
   width: 88%; 
   top: 35%; 
   left: 6%; 
-	//overflow: scroll;
-	//overflow-x: hidden;
 	display: table;
 	text-align: center;
+  border: 0.1em solid #555555;
+  border-radius: 0.5em;
+  outline: 0.1em solid white;
+  cursor: pointer;
 }
 
 #dropzone span {
-  //background-image: url("https://www.frag-den-neudeck.de/wp-content/uploads/2015/01/SMPTE-Farbbalken.jpg");
-  background-image: url("https://singersongwriterslam.de/temp/hg1.png");
-  background-size: 114%;
-  //background-position: center 25%; /*800px*/
-  //background-color: #00f;
+  background-color: #555555;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   display: table-cell;
   vertical-align: middle;
-  //mix-blend-mode: multiply;
-	//position: relative;
-	//top: 45%;
 }
-
-/*#dropzone.queue {
-  background-color: #fff;
-}
-
-#dropzone.queue span {
-  display: none;
-}
-
-#dropzone .file {
-	background-color: #fafafa;
-  border-bottom: #e7e7e7 1px solid;
-	color: #808080;
-	line-height: 20px;
-	padding: 20px;
-	text-align: left;
-}
-
-#dropzone .file .name {
-	float: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-	width: 90%;
-}
-
-#dropzone .file .progress {
-	//float: right;
-	//width: 10%;
-  //background-image: url("https://www.frag-den-neudeck.de/wp-content/uploads/2015/01/SMPTE-Farbbalken.jpg");
-  background-image: url("https://cdn.pbrd.co/images/Ho3ZdHv.jpg");
-  background-size: 145%;
-  background-position: 50%;
-  background-color: #00f;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  //mix-blend-mode: multiply;
-  display:block;
-  font-size: 5em;
-  font-weight: 900;
-	//position: relative;
-	//top: 45%;
-}
-
-.footer {
-  margin: auto;
-  text-align: center;
-  width: 80%;
-  font-size: 1em;
-  color: #ca826b;
-}*/
 
 @media screen and (orientation: landscape) {
-  body {
-    background: url("https://singersongwriterslam.de/temp/hg2.png") no-repeat;
-    background-size: cover;
-  }
   #dropzone span {
-  background-position: center 10%; /*800px*/
+  background-position: center 10%;
   }
 }
 
 @media screen and (orientation: portrait) {
-  body {
-    background: url("https://singersongwriterslam.de/temp/hg1.png") no-repeat;
-    //background: url("hg1.png") no-repeat;
-    background-size: cover;
-  }
   #dropzone span {
-  background-position: center 25%; /*800px*/
+  background-position: center 25%;
   }
-}
-
-
-/**@media (max-width: 767px) {
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-size: 0.8em;
-  }
-  #dropzone {
-    border: none;
-    height: 100%;
-    margin: 0;
-    width: 100%;
-  }
-  #dropzone .file {
-    padding: 10px;
-  }
-  #dropzone .file .name,
-  #dropzone .file .progress {
-    line-height: 1.8;
-    width: 100%;
-  }
-  .footer {
-    display: none;
-  }*/
 }
