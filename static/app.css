@@ -1,9 +1,65 @@
+:root {
+  --default-top-padding: 1.5em;
+  --default-body-bottom-margin: 2vmin;
+  --default-min-font-size-px: 12px;
+  --default-min-font-size: 12;
+  --default-max-font-size-px: 18px;
+  --default-max-font-size: 18;
+  --text-color: white;
+  --background-color: #555555;
+}
+
+html {
+  /* see: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#comment-1769978 - comment by MaxDesign */
+  font-size:calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560));
+  font-size: clamp(var(--default-min-font-size-px), calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560)), var(--default-max-font-size-px));
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  height: calc(100vh - 3vmin - var(--default-body-bottom-margin));
+  font-family: 'Arial', sans-serif;
   display:block;
-  font-size: 5.5em;
+  font-size: 1em;
+  background-color: var(--background-color);
+  margin: 3vmin 4vmin var(--default-body-bottom-margin) 4vmin;
+}
+
+#rules {
+  font-size: 3.5em;
+  float: right;
+}
+
+#rules a {
+  color: var(--text-color);
+}
+
+#rules a:visited {
+  color: var(--text-color);
+}
+
+main {
+  width: 100%;
+  /* heigth minus rules font-size */
+  height: calc(100% - 3.5em);
+  display: flex;
   font-weight: 700;
-  background-color: #555555;
+}
+
+dialog {
+  font-size: 3.5em;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  cursor: pointer;
+  border: 0;
+}
+
+dialog::backdrop {
+  background: var(--background-color);
+  cursor: pointer;
+}
+
+dialog li {
+  line-height: 1.2em;
 }
 
 input[type="file"] {
@@ -11,37 +67,22 @@ input[type="file"] {
 }
 
 #dropzone {
-	background-color: #f7f7f7;
-  position: absolute;
-  height: 30%; 
-  width: 88%; 
-  top: 35%; 
-  left: 6%; 
-	display: table;
+  font-size: 5.5em;
+	background-color: var(--text-color);
+	margin: auto;
+  padding: 1em;
 	text-align: center;
-  border: 0.1em solid #555555;
+  border: 0.1em solid var(--background-color);
   border-radius: 0.5em;
-  outline: 0.1em solid white;
+  outline: 0.065em solid var(--text-color);
   cursor: pointer;
 }
 
 #dropzone span {
-  background-color: #555555;
+  background-color: var(--background-color);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   display: table-cell;
   vertical-align: middle;
-}
-
-@media screen and (orientation: landscape) {
-  #dropzone span {
-  background-position: center 10%;
-  }
-}
-
-@media screen and (orientation: portrait) {
-  #dropzone span {
-  background-position: center 25%;
-  }
 }
