@@ -1,3 +1,2 @@
-# static/app.min.js|css will be created by editor automatically but isn't useful
-static/app.min.js
-static/app.min.css
+# *.min.* files will be created by editor automatically but isn't useful
+*.min.*
