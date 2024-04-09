@@ -6,49 +6,71 @@
   --default-max-font-size-px: 18px;
   --default-max-font-size: 18;
   --text-color: white;
-  --background-color: #555555;
+  --background-color: #0a0f1e;
 }
 
 html {
   /* see: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#comment-1769978 - comment by MaxDesign */
   font-size:calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560));
   font-size: clamp(var(--default-min-font-size-px), calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560)), var(--default-max-font-size-px));
+  width: 100%;
+  height: 100%;
+  position: fixed;
 }
 
 body {
   height: calc(100vh - 3vmin - var(--default-body-bottom-margin));
   font-family: 'Arial', sans-serif;
-  display:block;
+  display: flex;
+  flex-direction: column;
   font-size: 1em;
+  color: var(--text-color);
   background-color: var(--background-color);
   margin: 3vmin 4vmin var(--default-body-bottom-margin) 4vmin;
+  background-image: url(img/Kranz_alpha.png);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 #rules {
-  font-size: 3.5em;
-  float: right;
+  font-size: clamp(7.5vmin, 121px, 10.5vmin);
+  text-align: end;
 }
 
 #rules a {
   color: var(--text-color);
+  text-shadow: 2px 2px var(--background-color);
 }
 
 #rules a:visited {
   color: var(--text-color);
 }
 
+#rules img {
+  min-width: inherit;
+  width: 1em;
+}
+
 main {
   width: 100%;
   /* heigth minus rules font-size */
-  height: calc(100% - 3.5em);
+  max-height: calc(100% - 3.5em);
+  max-height: clamp(1em, calc(100% - 3.5em), 30em);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 5em;
+  column-gap: 3em;
+  margin: auto;
   font-weight: 700;
 }
 
 dialog {
-  font-size: 3.5em;
+  font-size: clamp(7.5vmin, 121px, 10.5vmin);
   color: var(--text-color);
-  background-color: var(--background-color);
+  text-shadow: 2px 2px var(--background-color);
+  background-color: transparent;
   cursor: pointer;
   border: 0;
 }
@@ -56,10 +78,30 @@ dialog {
 dialog::backdrop {
   background: var(--background-color);
   cursor: pointer;
+  background-image: url(img/Kranz_alpha.png);
+  filter: brightness(0.33);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 dialog li {
   line-height: 1.2em;
+}
+
+ul {
+  padding-inline-start: 0.75em;
+  margin-block-start: 0.5em;
+}
+
+.logo {
+  display: flex;
+  flex-basis: 0;
+}
+
+img {
+  width: 100%;
+  min-width: 3em;
 }
 
 input[type="file"] {
@@ -67,15 +109,19 @@ input[type="file"] {
 }
 
 #dropzone {
-  font-size: 5.5em;
+  font-size: clamp(4em, 4.5em, 13vh);
+  font-size: clamp(10vmin, 165px, 14vmin);
 	background-color: var(--text-color);
-	margin: auto;
-  padding: 1em;
+  padding: 0.5em;
 	text-align: center;
+  align-content: center;
   border: 0.1em solid var(--background-color);
   border-radius: 0.5em;
   outline: 0.065em solid var(--text-color);
   cursor: pointer;
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #dropzone span {
@@ -83,6 +129,14 @@ input[type="file"] {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  display: table-cell;
   vertical-align: middle;
+}
+
+@media (orientation: landscape) {
+  main {
+    flex-direction: row;
+  }
+  .logo img {
+    content: url(img/wetogether_-90degree.svg);
+  }
 }
