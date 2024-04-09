@@ -12,7 +12,7 @@ Run uploader on cli with ``npm start``.
   
 The web application of the uploader is available at ``http://IPADRESSE:8000`` in the same network. Alt-click on the wifi symbol to check the IP of the wifi. The uploaded images are stored in the ``uploads`` folder.
 
-To display the pictures, start ``PartyPictureSlideshow``. This script requires ``Xee`` and the security release for the folder as well as for keyboard operation.
+To display the pictures, start ``PartyPictureSlideshow``.
 
 ## Full usage on bare installation
 
