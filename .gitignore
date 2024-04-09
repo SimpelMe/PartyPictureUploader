@@ -1,2 +1,8 @@
 # *.min.* files will be created by editor automatically but isn't useful
 *.min.*
+
+# ignore all files in the upload folder
+uploads/*
+
+# dummy file for upload folder
+!uploads/dummy
