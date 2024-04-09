@@ -2,7 +2,7 @@ var config = require('./config');
 var fs = require('fs');
 
 function home(response, postData) {
-  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
   response.end(fs.readFileSync('./static/index.html'));
 }
 
@@ -60,6 +60,7 @@ function serveStatic(response, pathname, postData) {
     gif: 'image/gif',
     jpg: 'image/jpeg',
     jpeg: 'image/jpeg',
+    svg: 'image/svg+xml',
     js: 'application/javascript',
     png: 'image/png'
   };
