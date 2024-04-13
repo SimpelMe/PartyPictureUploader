@@ -7,23 +7,19 @@
   <link href="app.css" rel="stylesheet">
 </head>
 <body>
-  <div id="rules" onclick="dialog.showModal();"><a href="#"><img src="img/shield.svg" alt="shield icon"></a></div>
-  <dialog id="dialog" onclick="dialog.close()">
-    <div id="dialogText">
-      Dies sind die Regeln:
-      <ul>
-        <li>Alle Bilder werden innerhalb von 48 Stunden gelöscht.</li>
-      </ul>
-    </div>
-  </dialog>
   <main>
     <div class="logo">
       <img src="img/wetogether.svg" alt="wetogether logo">
     </div>
-    <div class="dropzone" id="dropzone">
-      <span>BILDER UPLOAD</span>
+    <div class="wrapper-right">
+      <div id="rules">
+        Alle Bilder werden innerhalb von 48 Stunden gelöscht.
+      </div>
+      <div class="dropzone" id="dropzone">
+        <span>BILDER UPLOAD</span>
+      </div>
+      <input type="file" id="addFile" accept="image/*,.heic" multiple>
     </div>
-    <input type="file" id="addFile" accept="image/*,.heic" multiple>
   </main>
   <script src="app.js"></script>
 </body>

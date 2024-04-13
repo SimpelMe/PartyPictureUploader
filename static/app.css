@@ -13,9 +13,9 @@ html {
   /* see: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#comment-1769978 - comment by MaxDesign */
   font-size:calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560));
   font-size: clamp(var(--default-min-font-size-px), calc(var(--default-min-font-size-px) + (var(--default-max-font-size) - var(--default-min-font-size)) * ((100vw - 360px) / 1560)), var(--default-max-font-size-px));
-  width: 100%;
+  /* width: 100%;
   height: 100%;
-  position: fixed;
+  position: fixed; */
 }
 
 body {
@@ -33,25 +33,6 @@ body {
   background-size: cover;
 }
 
-#rules {
-  font-size: clamp(7.5vmin, 121px, 10.5vmin);
-  text-align: end;
-}
-
-#rules a {
-  color: var(--text-color);
-  text-shadow: 2px 2px var(--background-color);
-}
-
-#rules a:visited {
-  color: var(--text-color);
-}
-
-#rules img {
-  min-width: inherit;
-  width: 1em;
-}
-
 main {
   width: 100%;
   /* heigth minus rules font-size */
@@ -66,34 +47,6 @@ main {
   font-weight: 700;
 }
 
-dialog {
-  font-size: clamp(7.5vmin, 121px, 10.5vmin);
-  color: var(--text-color);
-  text-shadow: 2px 2px var(--background-color);
-  background-color: transparent;
-  cursor: pointer;
-  border: 0;
-}
-
-dialog::backdrop {
-  background: var(--background-color);
-  cursor: pointer;
-  background-image: url(img/Kranz_alpha.png);
-  filter: brightness(0.33);
-  background-repeat:no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-dialog li {
-  line-height: 1.2em;
-}
-
-ul {
-  padding-inline-start: 0.75em;
-  margin-block-start: 0.5em;
-}
-
 .logo {
   display: flex;
   flex-basis: 0;
@@ -102,6 +55,22 @@ ul {
 img {
   width: 100%;
   min-width: 3em;
+}
+
+.wrapper-right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4vh;
+  align-self: center;
+}
+
+#rules {
+  font-size: clamp(3.5vmin, 60px, 5vmin);
+  text-shadow: 2px 1px var(--background-color);
+  flex-basis: 0;
+  align-content: center;
+  text-align: center;
+  color: var(--text-color);
 }
 
 input[type="file"] {
@@ -120,8 +89,7 @@ input[type="file"] {
   outline: 0.065em solid var(--text-color);
   cursor: pointer;
   height: fit-content;
-  margin-top: auto;
-  margin-bottom: auto;
+  filter: drop-shadow(0 0 0.1em black);
 }
 
 #dropzone span {
